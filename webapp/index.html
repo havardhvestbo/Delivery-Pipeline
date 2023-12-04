@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+      <h1>Welcome to My Portfolio</h1>
     </header>
     <main>
-        <section>
-            <h2>About Me</h2>
-            <p>This is a simple portfolio website to showcase my projects and skills.</p>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <p>Details about my projects will go here.</p>
-        </section>
+      <section>
+        <h2>About Me</h2>
+        <p>
+          This is a simple portfolio website to showcase my projects and skills.
+        </p>
+      </section>
+      <section>
+        <h2>Pipeline Description:</h2>
+        <p>
+          My CI/CD pipeline is a sophisticated automation process that ensures
+          every code commit is built, tested, and deployed seamlessly to the
+          production environment. The pipeline is implemented using GitHub
+          Actions, which allows for a series of steps to be executed in response
+          to triggers, typically a push to the main branch.
+        </p>
+        <p>
+          The build process includes installing dependencies, compiling the
+          code, and running any necessary scripts to prepare the application for
+          deployment. Upon a successful build, automated tests are run to
+          validate the functionality and integrity of the application, ensuring
+          that new changes do not introduce bugs or regressions.
+        </p>
+        <p>
+          Deployment is handled through Azure App Service, providing a
+          high-availability hosting environment for the web application. This is
+          achieved through Infrastructure as Code (IaC) using Terraform, which
+          allows for declarative configuration and management of cloud
+          resources, ensuring consistency and reproducibility across
+          environments.
+        </p>
+        <p>
+          This pipeline embodies the principles of continuous integration and
+          continuous delivery, allowing for rapid iteration and robust
+          deployment of web applications, with every change subject to automated
+          quality checks and easy rollback if needed.
+        </p>
+      </section>
     </main>
     <footer>
-        <p>Copyright &copy; 2023</p>
+      <p>Copyright &copy; 2023</p>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

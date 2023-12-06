@@ -23,7 +23,8 @@ jobs:
       # HTML/CSS validation using W3C Validator
       - name: Validate HTML
         run: |
-            docker run --rm -v ${PWD}:/workspace ghcr.io/w3c/validators/validator:latest /workspace/webapp/**/*.html
+            npm install --global html-validate
+            html-validate webapp/**/*.html
 
       # Accessibility checks with pa11y
       - name: Accessibility Check

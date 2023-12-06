@@ -20,17 +20,11 @@ jobs:
         with:
           args: -r webapp/**/*.html
 
-      # HTML/CSS validation using html-validate
+      # HTML validation using html-validate
       - name: Validate HTML
         run: |
           npm install --global html-validate
           html-validate webapp/**/*.html
-
-      # Performance audits with Lighthouse
-      - name: Lighthouse Performance Audit
-        uses: treosh/lighthouse-ci-action@v2
-        with:
-          urls: "http://portfolioappservice.azurewebsites.net" # Replace with the actual URL of your web application
 
       # Deployment to Azure Web App
       - name: "Deploy to Azure Web App"

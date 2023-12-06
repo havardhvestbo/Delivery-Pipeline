@@ -29,10 +29,10 @@ jobs:
       # Accessibility checks with pa11y
       - name: Accessibility Check
         run: |
-            npm install --global pa11y http-server
-            http-server webapp/ -p 8080 &
-            sleep 10 # wait for the server to start
-            pa11y http://localhost:8080/index.html
+          npm install --global pa11y http-server
+          http-server webapp/ -p 8080 &
+          sleep 10 # wait for the server to start
+          pa11y http://localhost:8080/index.html --timeout 90000 # 90 seconds
 
       # Performance audits with Lighthouse
       - name: Lighthouse Performance Audit

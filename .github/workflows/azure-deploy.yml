@@ -14,13 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Example step for link validation
+      # Link validation
       - name: Check for broken links
         uses: peter-evans/link-checker@v1
         with:
           args: -r webapp/**/*.html
 
-      # Example step for HTML/CSS validation using W3C Validator
+      # HTML/CSS validation using W3C Validator
       - name: Validate HTML/CSS
         run: |
           docker pull validator/validator
@@ -36,13 +36,14 @@ jobs:
       - name: Lighthouse Performance Audit
         uses: treosh/lighthouse-ci-action@v2
         with:
-          urls: |
-            http://localhost/webapp/index.html
-          budgetPath: './budget.json'
+          urls: "http://portfolioappservice.azurewebsites.net" # Replace with the actual URL of your web application
+          # budgetPath is optional, remove if not using performance budgets
+          # budgetPath: './budget.json' 
 
+      # Deployment to Azure Web App
       - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "portfolioAppService"
+          app-name: "portfolioAppService" # Ensure this matches the name of your Azure App Service
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: "webapp"
